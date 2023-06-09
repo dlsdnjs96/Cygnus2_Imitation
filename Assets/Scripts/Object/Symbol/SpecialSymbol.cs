@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Common;
 
-public class SpecialSymbol : ISymbol
+public class SpecialSymbol : Symbol
 {
     [SerializeField] public string changeName;
 

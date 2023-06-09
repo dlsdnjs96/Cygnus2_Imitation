@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class ISymbol : MonoBehaviour
+public partial class Symbol : MonoBehaviour
 {
     [SerializeField] public string symbolName;
     public virtual bool IsWild() // Wild 심볼인 경우

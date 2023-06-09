@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Common;
 
-public partial class ISymbol : MonoBehaviour
+public partial class Symbol : MonoBehaviour
 {
     public Vector2Int currentPosition;
     protected Vector2 departurePoint;

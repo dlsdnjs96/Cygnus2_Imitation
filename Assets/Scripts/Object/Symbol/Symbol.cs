@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class ISymbol : MonoBehaviour
+public partial class Symbol : MonoBehaviour
 {
     [SerializeField] private int symbolID;
 

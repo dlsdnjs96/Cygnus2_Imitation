@@ -16,14 +16,12 @@ public class FreeSpinManager : StageManager
         get { return _currentSpinNumber; }
         set { _currentSpinNumber = value; spinNumberText.text = value.ToString(); }
     }
-
     private int _maxSpinNumber;
     public int maxSpinNumber
     {
         get { return _maxSpinNumber; }
         set { _maxSpinNumber = value; maxSpinText.text = value.ToString(); }
     }
-
 
     public override void StartSpin()
     {
@@ -37,7 +35,6 @@ public class FreeSpinManager : StageManager
 
         FSM_Start();
     }
-    public override int GetSpinType() { return 2; }
     public bool NextStage()
     {
         if (currentSpinNumber >= maxSpinNumber)
@@ -56,4 +53,5 @@ public class FreeSpinManager : StageManager
         currentSpinNumber = 1;
         bonusStageNotice.SetActive(false);
     }
+    public override int GetSpinType() { return 2; }
 }

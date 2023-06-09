@@ -14,7 +14,11 @@ public class GageBar : MonoBehaviour
     [SerializeField] RectTransform gradationNumber;
 
     Delegate endEvent;
-    public float gage { get; private set; }
+    private float _gage;
+    public float gage {
+        get { return _gage; }
+        private set { _gage = value; gageNumber.text = value.ToString(); }
+    }
     public float maxGageNumber { get; private set; }
 
 

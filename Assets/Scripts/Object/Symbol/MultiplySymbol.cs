@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiflySymbol : SpecialSymbol
+public class MultiplySymbol : SpecialSymbol
 {
-    [SerializeField] public float multifly;
+    [SerializeField] public float multiply;
     public override bool IsWild() // Wild 심볼인 경우
     {
         return false;
@@ -15,7 +15,7 @@ public class MultiflySymbol : SpecialSymbol
     }
     public override float GetMultifly() // 멀티플라이 수치
     {
-        return multifly;
+        return multiply;
     }
     public override bool IsCountable() // Low, Middle, High or Wild 심볼인 경우
     {

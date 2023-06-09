@@ -45,7 +45,6 @@ public partial class StageManager : SymbolManager
             {
                 if (symbols[i, j] != null && symbols[i, j].IsCountable())
                 { // only low, middle, high, wild
-                    print("IsWild " + symbols[i, j].name + " " + symbols[i, j].IsWild());
                     if (symbols[i, j].IsWild())
                         countingTable[i, 8]++;
                     else 
@@ -376,10 +375,9 @@ public partial class StageManager : SymbolManager
             for (int j = 1; j <= 4; j++)
             {
                 for (int i = 1; i <= 6; i++)
-                {
                     table[i, j] = SymbolBucketPool.Instance.PullOutSymbol(new Vector2Int(i, j));
-                }
             }
+
             if (CheckIsHitted(table) == isHitted) return;
 
             for (int j = 1; j <= 4; j++)

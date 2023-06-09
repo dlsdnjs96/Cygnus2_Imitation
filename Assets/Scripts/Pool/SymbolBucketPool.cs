@@ -58,7 +58,6 @@ public class SymbolBucketPool : Singleton<SymbolBucketPool>
     public void BringBaseSpinBucket()
     {
         currentBucket = baseSpinBucket.DeepCopy();
-        
     }
     public void BringFreeSpinBucket()
     {

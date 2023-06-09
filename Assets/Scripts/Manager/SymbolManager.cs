@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SymbolManager : MonoBehaviour
 {
-    public static ISymbol[,] symbols = new ISymbol[7, 9];
-    public ISymbol this[int x, int y]
-    { 
-        get { return symbols[x, y]; }
-        private set { symbols[x, y] = value; }
-    }
+    public static Symbol[,] symbols = new Symbol[7, 9];
+    //public Symbol this[int x, int y]
+    //{ 
+    //    get { return symbols[x, y]; }
+    //    private set { symbols[x, y] = value; }
+    //}
 
-    protected ISymbol MakeSymbol(Vector2Int point)
+    protected Symbol MakeSymbol(Vector2Int point)
     {
         if (symbols[point.x, point.y] != null) RemoveSymbol(point);
         symbols[point.x, point.y] = SymbolPool.instance.GetObject(SymbolBucketPool.Instance.PullOutSymbol(point));
@@ -19,7 +19,7 @@ public class SymbolManager : MonoBehaviour
         symbols[point.x, point.y].transform.localEulerAngles = Vector3.zero;
         return symbols[point.x, point.y];
     }
-    protected ISymbol MakeSymbol(Vector2Int point, string name)
+    protected Symbol MakeSymbol(Vector2Int point, string name)
     {
         if (symbols[point.x, point.y] != null) RemoveSymbol(point);
         symbols[point.x, point.y] = SymbolPool.instance.GetObject(name);
@@ -27,14 +27,14 @@ public class SymbolManager : MonoBehaviour
         symbols[point.x, point.y].transform.localEulerAngles = Vector3.zero;
         return symbols[point.x, point.y];
     }
-    protected ISymbol MakeWild(Vector2Int point)
+    protected Symbol MakeWild(Vector2Int point)
     {
         if (symbols[point.x, point.y] != null) RemoveSymbol(point);
         symbols[point.x, point.y] = SymbolPool.instance.GetObject("Wild");
         symbols[point.x, point.y].currentPosition = point;
         return symbols[point.x, point.y];
     }
-    protected ISymbol MakeUsedScatter(Vector2Int point)
+    protected Symbol MakeUsedScatter(Vector2Int point)
     {
         if (symbols[point.x, point.y] != null) RemoveSymbol(point);
         symbols[point.x, point.y] = SymbolPool.instance.GetObject("UsedScatter");
@@ -59,12 +59,11 @@ public class SymbolManager : MonoBehaviour
         symbols[from.x, from.y] = null;
     }
 
-    protected ISymbol ChangeSpecialSymbol(Vector2Int point)
+    protected Symbol ChangeSpecialSymbol(Vector2Int point)
     {
-        ISymbol ChangedSymbol = SymbolPool.instance.GetObject(symbols[point.x, point.y].GetChangeName());
+        Symbol ChangedSymbol = SymbolPool.instance.GetObject(symbols[point.x, point.y].GetChangeName());
         if (symbols[point.x, point.y] != null) RemoveSymbol(point);
 
-        //print("ChangeSpecialSymbol " + point + " " + symbols[point.x, point.y].GetChangeName());
         symbols[point.x, point.y] = ChangedSymbol;
         symbols[point.x, point.y].currentPosition = point;
         return symbols[point.x, point.y];

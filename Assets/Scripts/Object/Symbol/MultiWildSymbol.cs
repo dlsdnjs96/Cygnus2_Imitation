@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiWildSymbol : MultiflySymbol
+public class MultiWildSymbol : MultiplySymbol
 {
     public override bool IsWild() // Wild 심볼인 경우
     {
